@@ -1,4 +1,9 @@
 <?php
+
+/**
+ * Classe représentant une Voiture
+ * Geres la marque et la couleur d'une voiture.
+ */
  class Voiture {
     protected $marque;
     protected $couleur;
