@@ -1,7 +1,5 @@
 <?php
-
-
-
+require_once 'Logger.php';
 interface Vehicule{
     public function demarrer();
     public function accelerer();
@@ -15,8 +13,10 @@ interface Vehicule{
  * Geres la marque et la couleur d'une voiture.
  */
 //Si on met une classe comme final class, elle ne peut pas être instanciée
- class Voiture implements Vehicule {
-
+/*Si on met la classe comme abstrait, alors on ne peut plus l'instancier*/
+ abstract class Voiture implements Vehicule {
+    //Le methode dans logger doit être trouver dans cette classe
+    use Logger;
     const RALENTIR = 1;
 
     //protected c'est pour les classes enfants
@@ -27,11 +27,13 @@ interface Vehicule{
     protected bool $moteurDemarre;
 
         protected function __construct(){
+            $this -> log('une voiture est crée');
             $this ->vitesse = 0;
             $this->moteurDemarre = false;
         }
 
         public function demarrer(){
+            $this -> log('Le moteur est démarré');
             $this->moteurDemarre = true;
         }
 
@@ -41,6 +43,7 @@ interface Vehicule{
 
         public function accelerer(){
             if($this->moteurDemarre){
+                $this -> log('la voiture accélére');
                 $this->vitesse += $this -> acceleration;
             }
         }
@@ -93,13 +96,13 @@ class Toyota extends Voiture
  $maFerrari -> accelerer();
  echo $maFerrari -> getVitesse(), '<br>';
 
- $maToyota = new Toyota();
+ /*$maToyota = new Toyota();
  $maToyota -> demarrer();
  echo $maToyota -> getVitesse(), '<br>';
  $maToyota -> accelerer();
  echo $maToyota -> getVitesse(), '<br>';
  $maToyota -> accelerer();
- echo $maToyota -> getVitesse(), '<br>';
+ echo $maToyota -> getVitesse(), '<br>';*/
 
 
     
