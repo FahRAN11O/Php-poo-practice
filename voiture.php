@@ -1,45 +1,65 @@
 <?php
+/**
+ * classe ferrari fille de la voiture
+ */
+class Ferrari extends Voiture
+{
+    
+    public function __construct()
+    {
+        parent::__construct();
+        $this -> acceleration = 10;
+    }
+}
+
 
 /**
  * Classe représentant une Voiture
  * Geres la marque et la couleur d'une voiture.
  */
  class Voiture {
-    protected $marque;
-    protected $couleur;
+    protected float $vitesse;
 
-    public function setMarque($nom){
-        $this->marque = strtoupper($nom);
-    }
+    protected float $acceleration;
 
-    public function setCouleur($nom){
-        $this->couleur = strtolower($nom);
-    }
+    protected bool $moteurDemarre;
 
-    public function getMarque(){
-        return $this->marque ;
-    
-    }
-
-    public function getCouleur(){
-        return $this ->couleur;
-    }
- }
-    class Toyota extends Voiture{
-        public function setMarque($nom){
-            $this->marque='TOYOTA';
+        protected function __construct(){
+            $this ->vitesse = 0;
+            $this->moteurDemarre = false;
         }
-     }
+
+        public function demarrer(){
+            $this->moteurDemarre = true;
+        }
+
+        public function eteindre(){
+            $this->moteurDemarre = false;
+        }
+
+        public function accelerer(){
+            if($this->moteurDemarre){
+                $this->vitesse += $this -> acceleration;
+            }
+        }
+
+        public function getVitesse(){
+            return  $this->vitesse;
+        }
+
+        public function getAcceleration(){
+            return $this->acceleration;
+        }
+ }
+
+ $maFerrari = new Ferrari();
+ $maFerrari -> demarrer();
+ echo $maFerrari -> getVitesse(), '<br>';
+ $maFerrari -> accelerer();
+ echo $maFerrari -> getVitesse(), '<br>';
+ $maFerrari -> accelerer();
+ echo $maFerrari -> getVitesse(), '<br>';
 
 
-
- //Création d'un objet à partir de la clase Voiture
- $uneToyota = new Toyota();
-
- //Définition des propriétés de l'objet
- $uneToyota->setMarque ('');
- $uneToyota -> setCouleur('Rouge');
- var_dump($uneToyota);
-
- 
+    
  
