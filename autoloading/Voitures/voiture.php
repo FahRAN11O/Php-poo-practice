@@ -1,5 +1,8 @@
 <?php
-require_once 'Logger.php';
+
+namespace Voitures;
+
+//require_once 'Logger.php';
 
 
 /**
@@ -10,7 +13,7 @@ require_once 'Logger.php';
 /*Si on met la classe comme abstrait, alors on ne peut plus l'instancier*/
  abstract class Voiture implements Vehicule {
     //Le methode dans logger doit être trouver dans cette classe
-    use Logger;
+    use \Utilis\Logger;
     const RALENTIR = 1;
 
     //protected c'est pour les classes enfants

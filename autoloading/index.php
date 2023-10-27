@@ -1,19 +1,20 @@
 <?php
 spl_autoload_register(function($className){
-	$file = $className.'.php';
+	$file = str_replace('\\', '/', $className.'.php') ;
 	var_dump($file);
 	if(file_exists($file)){
 		require_once($file);
 	}
 });
 
-$maFerrari = new Ferrari();
+$maFerrari = new Voitures\Ferrari();
 $maFerrari -> demarrer();
 echo $maFerrari -> getVitesse(), '<br>';
 $maFerrari -> accelerer();
 echo $maFerrari -> getVitesse(), '<br>';
 $maFerrari -> accelerer();
 echo $maFerrari -> getVitesse(), '<br>';
+
 
 /*
 $maToyota = new Toyota();

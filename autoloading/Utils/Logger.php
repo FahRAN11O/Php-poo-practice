@@ -1,5 +1,7 @@
 <?php
 
+namespace Utils;
+
 trait Logger{
 
 	public function log($message){

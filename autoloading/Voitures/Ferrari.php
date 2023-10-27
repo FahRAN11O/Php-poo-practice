@@ -1,4 +1,6 @@
  <?php
+namespace Voitures;
+/*Le nom de dossier qu'il contient doit correspondre au namespace*/
  /**
  * classe ferrari fille de la voiture
  */

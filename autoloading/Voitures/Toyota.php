@@ -1,4 +1,7 @@
 <?php
+
+namespace Voitures;
+
 class Toyota extends Voiture
 {
     
