@@ -1,11 +1,5 @@
 <?php
 require_once 'Logger.php';
-interface Vehicule{
-    public function demarrer();
-    public function accelerer();
-    public function getVitesse();
-    public function ralentir();
-}
 
 
 /**
@@ -61,49 +55,9 @@ interface Vehicule{
         }
  }
 
- /**
- * classe ferrari fille de la voiture
- */
-class Ferrari extends Voiture
-{
-    
-    public function __construct()
-    {
-        parent::__construct();
-        $this -> acceleration = 10;
-    }
-
-    public function getVitesse(){
-        return $this->vitesse.' km/h';
-    }
-}
-
-class Toyota extends Voiture
-{
-    
-    public function __construct()
-    {
-        parent::__construct();
-        $this -> acceleration = 5;
-    }
-}
-
- $maFerrari = new Ferrari();
- $maFerrari -> demarrer();
- echo $maFerrari -> getVitesse(), '<br>';
- $maFerrari -> accelerer();
- echo $maFerrari -> getVitesse(), '<br>';
- $maFerrari -> accelerer();
- echo $maFerrari -> getVitesse(), '<br>';
-
- /*$maToyota = new Toyota();
- $maToyota -> demarrer();
- echo $maToyota -> getVitesse(), '<br>';
- $maToyota -> accelerer();
- echo $maToyota -> getVitesse(), '<br>';
- $maToyota -> accelerer();
- echo $maToyota -> getVitesse(), '<br>';*/
 
 
-    
+
+
+ 
  

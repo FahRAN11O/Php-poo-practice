@@ -10,4 +10,4 @@ $date->sub(new DateInterval('P1D'));
 
 $nbJours = $date->diff(new DateTime('2023-01-01'));
 
-echo $nbJours->format('%a jours');
+echo $nbJours->format('%a jours'); 
