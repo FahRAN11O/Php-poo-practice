@@ -6,8 +6,10 @@ spl_autoload_register(function($className){
 		require_once($file);
 	}
 });
+use Voitures\Ferrari;
 
-$maFerrari = new Voitures\Ferrari();
+
+$maFerrari = new Ferrari();
 $maFerrari -> demarrer();
 echo $maFerrari -> getVitesse(), '<br>';
 $maFerrari -> accelerer();

@@ -11,7 +11,9 @@ namespace Voitures;
  */
 //Si on met une classe comme final class, elle ne peut pas être instanciée
 /*Si on met la classe comme abstrait, alors on ne peut plus l'instancier*/
- abstract class Voiture implements Vehicule {
+
+/*********************************L'anti-slash c'est pour revenir dans le dossier d'avant (racine)*/
+ abstract class Voiture implements \Vehicule {
     //Le methode dans logger doit être trouver dans cette classe
     use \Utilis\Logger;
     const RALENTIR = 1;
